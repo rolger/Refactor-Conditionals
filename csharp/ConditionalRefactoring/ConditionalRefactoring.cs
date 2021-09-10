@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 namespace ConditionalRefactoring
 {
     public class ConditionalRefactoring
@@ -8,8 +10,10 @@ namespace ConditionalRefactoring
             {
                 return 3;
             }
-
-            return 4;
+            else
+            {
+                return 4;
+            }
         }
 
         public static int RedundantElse(int x)
@@ -18,17 +22,14 @@ namespace ConditionalRefactoring
             {
                 return 1;
             }
-
-            if (x < 10)
+            else if (x < 10)
             {
                 return 10;
             }
-
             if (x < 30)
             {
                 return 30;
             }
-
             return 0;
         }
 
@@ -46,7 +47,6 @@ namespace ConditionalRefactoring
                     return x + y;
                 }
             }
-
             return 0;
         }
 
@@ -56,7 +56,6 @@ namespace ConditionalRefactoring
             {
                 return x + y;
             }
-
             return 0;
         }
 
@@ -93,7 +92,6 @@ namespace ConditionalRefactoring
             {
                 factor = x;
             }
-
             if (x > 3)
             {
                 result += y * 3;
@@ -128,8 +126,7 @@ namespace ConditionalRefactoring
 
                     return 1;
                 }
-
-                if (!s1.Equals("foo"))
+                else if (!s1.Equals("foo"))
                 {
                     return 2;
                 }
@@ -139,16 +136,12 @@ namespace ConditionalRefactoring
                 if (s2.Equals("bar"))
                 {
                     return 3;
-                }
-
-                if (!s2.Equals("world"))
+                } else if (!s2.Equals("world"))
                 {
                     return 4;
                 }
-
                 return 5;
             }
-
             return 0;
         }
     }
